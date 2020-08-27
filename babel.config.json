@@ -1,0 +1,21 @@
+{
+    "overrides": [{
+      "test": "./src",
+      "presets": [
+        ["@babel/preset-env", {
+          "targets": { "firefox": 42 }
+        }]
+      ],
+      "plugins": [
+        "@babel/transform-runtime"
+      ]
+    }, {
+      "test": ["./src", "./node_modules/@babel/runtime"],
+      "plugins": [
+        ["polyfill-corejs3", {
+          "method": "usage-pure",
+          "targets": { "firefox": 4 }
+        }]
+      ]
+    }]
+  }
